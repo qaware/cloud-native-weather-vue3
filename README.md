@@ -5,6 +5,7 @@ This example implements a simple UI for the weather service using Vue 3.
 ## Maintainer
 
 M.-Leander Reimer (@lreimer), <mario-leander.reimer@qaware.de>
+
 Robin Kalleicher (@robink001), <robin.kalleicher@qaware.de>
 
 ## License
