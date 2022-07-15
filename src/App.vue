@@ -1,15 +1,15 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <img alt="Cloudy logo" src="./assets/cloudy.png" height="300">
+  <WeatherView title="Welcome to this Spring Boot Weather Application" msg=""/>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import WeatherView from './components/WeatherView.vue'
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    WeatherView
   }
 }
 </script>
