@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: vue-frontend
+spec:
+  selector:
+    matchLabels:
+      app: weather-service
+      tier: frontend
+      track: stable
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: weather-service
+        tier: frontend
+        track: stable
+    spec:
+      containers:
+        - name: nginx
+          image: cloud-native-weather-vue
+          imagePullPolicy: Never
+          #ports:
+          #- containerPort: 3000
+
+          #lifecycle:
+            #preStop:
+              #exec:
+                #command: ["/usr/sbin/nginx","-s","quit"]
