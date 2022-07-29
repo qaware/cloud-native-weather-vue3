@@ -2,7 +2,9 @@
   <div class="hello">
     <h1>{{ title }}</h1>
   </div>
-  <p>{{msg}}</p>
+  <p v-if="weatherDto.weather != null">{{"The weather in " + weatherDto.city + " is: " + weatherDto.weather}}</p>
+  <p v-else-if="weatherDto.city != null">{{"There is no current weather data for: " + weatherDto.city}}</p>
+  <p v-else>{{"Tell me where you live!"}}</p>
   <div>
     <input v-model="cityInput" placeholder="Where do you live?" />
     <button @click="search">How is the weather?</button>
@@ -17,7 +19,7 @@ export default {
   },
   data() {
     return {
-      msg: "Hier könnte Ihre Werbung stehen",
+      weatherDto: JSON,
       cityInput: ""
     }
   },
@@ -25,7 +27,7 @@ export default {
     search() {
       fetch("/api/weather?city=" + this.cityInput)
           .then((response) => response.text())
-          .then((data) => {this.msg = data;});
+          .then((data) => {this.weatherDto = JSON.parse(data);});
     }
   }
 }
