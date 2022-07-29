@@ -2,7 +2,8 @@
   <div class="hello">
     <h1>{{ title }}</h1>
   </div>
-  <p v-if="weatherDto.weather != null">{{"The weather in " + weatherDto.city + " is: " + weatherDto.weather}}</p>
+  <p v-if="weatherDto.weather != null">{{"The weather in " + weatherDto.city + " is: " + weatherDto.weather + " and "
+    + weatherDto.temperature + "°C"}}</p>
   <p v-else-if="weatherDto.city != null">{{"There is no current weather data for: " + weatherDto.city}}</p>
   <p v-else>{{"Tell me where you live!"}}</p>
   <div>
@@ -19,7 +20,7 @@ export default {
   },
   data() {
     return {
-      weatherDto: JSON,
+      weatherDto: {weather: null, city: null, temperature: null},
       cityInput: ""
     }
   },
