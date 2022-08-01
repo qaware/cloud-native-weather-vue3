@@ -5,23 +5,24 @@ metadata:
 spec:
   selector:
     matchLabels:
-      app: weather-service
+      app: vue-frontend
       tier: frontend
       track: stable
   replicas: 1
   template:
     metadata:
       labels:
-        app: weather-service
+        app: vue-frontend
         tier: frontend
         track: stable
     spec:
       containers:
-        - name: nginx
+        - name: cloud-native-weather-vue
           image: cloud-native-weather-vue
           imagePullPolicy: Never
-          #ports:
-          #- containerPort: 3000
+          ports:
+            - name: http
+              containerPort: 3000
 
           #lifecycle:
             #preStop:
