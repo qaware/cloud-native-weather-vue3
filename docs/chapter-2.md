@@ -97,4 +97,4 @@ browser and observe some data being retrieved and displayed.
 ---
 Last chapter: [Chapter 01 - Creating a Vue.js Application](chapter-1.md)
 
-Next chapter: [Chapter 03 - Dockerize the Vue frontend](chapter-3.md)
+Next chapter: [Chapter 03 - Containerize the Vue frontend](chapter-3.md)

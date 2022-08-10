@@ -1,4 +1,4 @@
-## 3) Dockerize the Vue frontend
+## 3) Containerize the Vue frontend
 
 In this chapter the concept of Docker in software development as well as its usage is discussed.
 
@@ -103,4 +103,4 @@ chapters.
 ---
 Last chapter: [Chapter 02 - Connect the Vue frontend to the backend locally](chapter-2.md)
 
-Next chapter: [Chapter 04 - Deploy the Vue frontend to kubernetes](chapter-4.md)
+Next chapter: [Chapter 04 - Deploy the Vue frontend to Kubernetes](chapter-4.md)

@@ -1,4 +1,4 @@
-## 4) Deploy the Vue frontend to kubernetes
+## 4) Deploy the Vue frontend to Kubernetes
 
 In this chapter Kubernetes cluster and deployments are discussed.
 
@@ -144,6 +144,6 @@ As you probably noticed already, these are a lot of commands to do, so can we si
 Of course, we can.
 
 ---
-Last chapter: [Chapter 03 - Dockerize the Vue frontend](chapter-3.md)
+Last chapter: [Chapter 03 - Containerize the Vue frontend](chapter-3.md)
 
 Next chapter: [Chapter 05 - Kustomize](chapter-5.md)

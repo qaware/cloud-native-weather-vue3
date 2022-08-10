@@ -26,9 +26,12 @@ If all of these are set up, feel free to start right away.
 ## Outline
 
 1) [Chapter 01 - Creating a Vue.js Application](chapter-1.md)
-2) [Chapter 02 - ](chapter-2.md)
-3) [Chapter 03 - ](chapter-3.md)
-4) [Chapter 04 - ](chapter-4.md)
+2) [Chapter 02 - Connect the Vue frontend to the backend locally](chapter-2.md)
+3) [Chapter 03 - Containerize the Vue frontend](chapter-3.md)
+4) [Chapter 04 - Deploy the Vue frontend to Kubernetes](chapter-4.md)
+5) [Chapter 05 - Kustomize](chapter-5.md)
+6) [Chapter 06 - Tilt](chapter-6.md)
+7) [Chapter 07 - Connect frontend and backend in a Kubernetes cluster](chapter-7.md)
 
 
 

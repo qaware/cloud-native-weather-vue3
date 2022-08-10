@@ -57,6 +57,6 @@ kustomize build ../overlays/prod | kubectl apply -f -
 to apply the production kubernetes cluster.
 
 ---
-Last chapter: [Chapter 04 - Deploy the Vue frontend to kubernetes](chapter-4.md)
+Last chapter: [Chapter 04 - Deploy the Vue frontend to Kubernetes](chapter-4.md)
 
 Next chapter: [Chapter 06 - Tilt](chapter-6.md)
