@@ -97,9 +97,10 @@ docker run -p 3000:3000 my-app
 With this your frontend container should start up and a link given will open your browser and display your application.
 
 Still, this application is containerized, but does not know anything about your backend. Therefore, in the next chapter 
-we will discuss how to connect your frontend to a given backend and deploy it to a kubernetes cluster.
+we will discuss how to connect your frontend to a given backend after deploying it to a kubernetes cluster in the following 
+chapters.
 
 ---
 Last chapter: [Chapter 02 - Connect the Vue frontend to the backend locally](chapter-2.md)
 
-Next chapter: [Chapter 04 - ](chapter-4.md)
+Next chapter: [Chapter 04 - Deploy the Vue frontend to kubernetes](chapter-4.md)
