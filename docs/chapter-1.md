@@ -67,4 +67,4 @@ other guides to form your frontend as you like it.
 
 ---
 
-Next chapter: [Chapter 02 - ](chapter-2.md)
+Next chapter: [Chapter 02 - Connect the Vue frontend to the backend locally](chapter-2.md)
