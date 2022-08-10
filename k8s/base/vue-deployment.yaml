@@ -17,9 +17,9 @@ spec:
         track: stable
     spec:
       containers:
-        - name: cloud-native-weather-vue
-          image: cloud-native-weather-vue
-          imagePullPolicy: Never
+        - name: cloud-native-weather-vue3
+          image: cloud-native-weather-vue3
+          imagePullPolicy: IfNotPresent
           ports:
             - name: http
               containerPort: 3000
