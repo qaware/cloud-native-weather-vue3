@@ -58,4 +58,4 @@ With this Tilt is configured for this application.
 ---
 Last chapter: [Chapter 05 - Kustomize](chapter-5.md)
 
-Next chapter: [Chapter 07- Connect frontend and backend in a kubernetes cluster](chapter-7.md)
+Next chapter: [Chapter 07 - Connect frontend and backend in a kubernetes cluster](chapter-7.md)

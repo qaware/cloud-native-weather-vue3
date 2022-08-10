@@ -146,4 +146,4 @@ Of course, we can.
 ---
 Last chapter: [Chapter 03 - Dockerize the Vue frontend](chapter-3.md)
 
-Next chapter: [Chapter 05- ](chapter-5.md)
+Next chapter: [Chapter 05 - Kustomize](chapter-5.md)
