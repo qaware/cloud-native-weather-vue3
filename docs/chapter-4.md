@@ -1,4 +1,4 @@
-## 4) Deploy the Vue frontend to Kubernetes
+## 4) Deploy The Vue Frontend To Kubernetes
 
 In this chapter Kubernetes cluster and deployments are discussed.
 
@@ -36,7 +36,7 @@ kubectl get nodes
 
 With the local kubernetes cluster set up correctly, we can now start deploying our application!
 
-### Create Kubernetes .yaml files
+### Create Kubernetes .yaml Files
 
 To achieve a deployment you will need files telling what to deploy. Kubectl needs .yaml-files of the structure given in this project,
 which distinguishes between pods, deployments, containers and further information needed to define your wanted cluster setup.

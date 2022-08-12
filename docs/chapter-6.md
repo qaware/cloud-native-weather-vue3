@@ -7,7 +7,7 @@ inside docker as well as a local kubernetes cluster on your device. Furthermore,
 and reducing the effort by using Kustomize. Now, we want to simplify this processes even more. For this reason we want
 to take a closer look onto Tilt.
 
-### What is Tilt?
+### What Is Tilt?
 
 Tilt is a microservice not only deploying to the kubernetes cluster as you wish, it also enables a graphic overview of
 your running pods and immediate feedback if something goes wrong or crashes. Furthermore, it updates your kubernetes cluster
@@ -31,7 +31,7 @@ and a short output gives you the option to press spacebar. After you pressed spa
 and tilt should start your local kubernetes pods automatically. At this point, check the outputs by taking a closer look
 onto all given pods and deployments.
 
-### Creating a Tiltfile
+### Creating A Tiltfile
 
 After we now saw how powerful tilt is, let's add tilt to your application. Again, you need to add a setup file for tilt,
 a so called Tiltfile. This Tiltfile contains information of your kubernetes yaml files and Dockerfile as well as further

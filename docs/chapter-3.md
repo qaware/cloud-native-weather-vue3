@@ -1,11 +1,11 @@
-## 3) Containerize the Vue frontend
+## 3) Containerize The Vue Frontend
 
 In this chapter the concept of Docker in software development as well as its usage is discussed.
 
 Docker is a software enabling developers to containerize their application. These docker images can then be shared and
 run on all environments supporting these images, completely independent of the operating system used.
 
-### Create a Docker Image
+### Create A Docker Image
 
 To create a Docker image of your application a so-called Dockerfile needs to be created, telling Docker what to do.
 The Dockerfile of this application looks as follows:
@@ -33,7 +33,7 @@ are given on DockerHub and are extended in the following lines. A working direct
 files are copied into our docker image. Commands are then executed by the `RUN` command. With this the Dockerfile is done 
 and able to work for this application.
 
-### Create a .dockerignore file
+### Create A .dockerignore File
 
 In this case it is recommended to create a `.dockerignore` file inside your root directory. Filling this file with:
 
@@ -45,7 +45,7 @@ In this case it is recommended to create a `.dockerignore` file inside your root
 guarantees that neither intermediate frontend versions nor `node_modules`, which cost much space and are not mandatory here,
 are copied to your docker image.
 
-### Configure nginx
+### Configure Nginx
 
 Still, there is one part missing. Inside the Dockerfile a so called `nginx.conf` is given containing the configuration and
 desired properties of our frontend containerized in a docker image. This file needs to be created now.
@@ -88,7 +88,7 @@ http {
 
 This is a simple `nginx.conf` file, which serves the frontend on port 3000 and handles simple errors and logs for us.
 
-### Start up the UI container
+### Start Up The UI Container
 
 With the configuration from before, you should now able to build your docker image via:
 

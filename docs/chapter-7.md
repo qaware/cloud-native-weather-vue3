@@ -1,4 +1,4 @@
-## 7) Connect frontend and backend in a Kubernetes cluster
+## 7) Connect Frontend And Backend In A Kubernetes Cluster
 
 As you probably noticed by now, the Kubernetes deployment is simple, but does not connect to a given backend so far.
 
@@ -6,7 +6,7 @@ This is of course an important point, which was shifted to the end here to let y
 themselves before connecting this frontend to other applications. To achieve a connection inside the kubernetes cluster, we
 need to modify the Dockerfile, which was created in chapter 3.
 
-### Modify the Dockerfile
+### Modify The Dockerfile
 
 For the connection to work, we need to modify our nginx.conf with following lines:
 

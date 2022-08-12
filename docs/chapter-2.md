@@ -1,10 +1,10 @@
-## 2) Connect the Vue frontend to the backend locally
+## 2) Connect The Vue Frontend To The Backend Locally
 
 Now after you personalized your frontend according to your preferences you are able to 
 connect it to your backend. First, we want to achieve this locally, before we get to Kubernetes, Cloud Native concepts
 and Deployments.
 
-### Modify Vue.config.js
+### Modify The Vue.config.js
 
 Open the `vue.config.js` file in your root directory. In the beginning it should look something like this:
 
@@ -49,7 +49,7 @@ module.exports = defineConfig({
 ```
 </details>
 
-### Modify the Vue component
+### Modify The Vue Component
 
 To show a response of our frontend to the backend, we need to display an information retrieved from the backend in our
 frontend component.
@@ -129,7 +129,7 @@ input {
 ```
 </details>
 
-### Testing this connection
+### Testing The Connection
 
 To test this, go to a repository of the cloud-native-lab containing a backend, change the settings of ports according to 
 this configuration (backend: 8080, frontend: 3000) and start both (first the backend, secondly the frontend) locally. 
