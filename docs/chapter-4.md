@@ -36,7 +36,7 @@ kubectl get nodes
 
 With the local kubernetes cluster set up correctly, we can now start deploying our application!
 
-### Deploy To A Local Kubernetes Cluster
+### Create Kubernetes .yaml files
 
 To achieve a deployment you will need files telling what to deploy. Kubectl needs .yaml-files of the structure given in this project,
 which distinguishes between pods, deployments, containers and further information needed to define your wanted cluster setup.
@@ -104,6 +104,8 @@ spec:
 
 your app will be able to be accessed. Analog files for your backend will become necessary as well, during the deployment
 of the frontend used in this workshop.
+
+### Deploy To A Local Kubernetes Cluster
 
 After you fully understood the .yaml-files, you are now capable of deploying to your local cluster. For this open your
 command line at the folder your yaml files are in. After that use these to create your application with the commands:

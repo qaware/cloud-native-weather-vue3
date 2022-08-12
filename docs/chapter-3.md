@@ -5,6 +5,8 @@ In this chapter the concept of Docker in software development as well as its usa
 Docker is a software enabling developers to containerize their application. These docker images can then be shared and
 run on all environments supporting these images, completely independent of the operating system used.
 
+### Create a Docker Image
+
 To create a Docker image of your application a so-called Dockerfile needs to be created, telling Docker what to do.
 The Dockerfile of this application looks as follows:
 
@@ -31,6 +33,8 @@ are given on DockerHub and are extended in the following lines. A working direct
 files are copied into our docker image. Commands are then executed by the `RUN` command. With this the Dockerfile is done 
 and able to work for this application.
 
+### Create a .dockerignore file
+
 In this case it is recommended to create a `.dockerignore` file inside your root directory. Filling this file with:
 
 ```
@@ -40,6 +44,8 @@ In this case it is recommended to create a `.dockerignore` file inside your root
 
 guarantees that neither intermediate frontend versions nor `node_modules`, which cost much space and are not mandatory here,
 are copied to your docker image.
+
+### Configure nginx
 
 Still, there is one part missing. Inside the Dockerfile a so called `nginx.conf` is given containing the configuration and
 desired properties of our frontend containerized in a docker image. This file needs to be created now.
@@ -82,7 +88,9 @@ http {
 
 This is a simple `nginx.conf` file, which serves the frontend on port 3000 and handles simple errors and logs for us.
 
-With this configured, you are now able to build your docker image via:
+### Start up the UI container
+
+With the configuration from before, you should now able to build your docker image via:
 
 ```
 docker build -t vue-frontend .
@@ -91,12 +99,12 @@ docker build -t vue-frontend .
 and start it via:
 
 ```
-docker run -p 3000:3000 my-app
+docker run -p 3000:3000 vue-frontend
 ```
 
 With this your frontend container should start up and a link given will open your browser and display your application.
 
-Still, this application is containerized, but does not know anything about your backend. Therefore, in the next chapter 
+Still, this application is containerized, but does not know anything about your backend. Therefore, 
 we will discuss how to connect your frontend to a given backend after deploying it to a kubernetes cluster in the following 
 chapters.
 
