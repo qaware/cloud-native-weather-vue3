@@ -2,12 +2,12 @@ const { defineConfig } = require('@vue/cli-service')
 module.exports = defineConfig({
   transpileDependencies: true,
   devServer: {
-    // desired port for your UI
+    // port of the UI
     port: 3000,
     proxy: {
-      // according to our backend api calls start with /api
+      // backend api calls of this workshop start with /api
       '/api': {
-        // the local backend is running on localhost:8080
+        // the address of the local backend
         target: 'http://localhost:8080',
         ws: true,
         changeOrigin: true
