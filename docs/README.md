@@ -3,13 +3,13 @@
 This is the ReadMe of the Vue frontend for the cloud native workshop.
 
 To be able to follow this workshop, make sure you are using the correct setup and languages mentioned in the
-following Prerequisites. The motto of this workshop will be cloud native, a concept containerizing applications to enable
+following Prerequisites. The motto of this workshop will be Cloud Native, a concept containerizing applications to enable
 applications to work independently of operating systems, being scalable in arbitrary amounts and many other advantages.
-Keywords of this workshop will be Vue, docker, docker-compose, kubernetes, Kustomize, Tilt and GitHub Actions.
+Keywords of this workshop will be Vue, docker, Kubernetes, Kustomize, Tilt and GitHub Actions.
 
 ## Prerequisites
 
-Before you dive right into the concepts of spring boot and cloud native, first make sure all your development
+Before you dive into the concepts of Vue 3 and Cloud Native, first make sure all your development
 environments are set up properly and to your expectations!
 
 - Modern Operating System (Windows 10, MacOS, ...)
