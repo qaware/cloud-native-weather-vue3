@@ -1,0 +1,28 @@
+apiVersion: skaffold/v2beta24
+kind: Config
+metadata:
+  name: cloud-native-weather-vue3
+
+build:
+  tagPolicy:
+    gitCommit: {}
+  artifacts:
+    - image: cloud-native-weather-vue3
+      docker:
+        dockerfile: Dockerfile
+  local:
+    push: false
+    useBuildkit: true
+    useDockerCLI: false
+
+deploy:
+  kustomize:
+    defaultNamespace: default
+    paths: ["k8s/overlays/dev"]
+
+portForward:
+  - resourceName: vue-frontend
+    resourceType: service
+    namespace: default
+    port: 3000
+    localPort: 13000

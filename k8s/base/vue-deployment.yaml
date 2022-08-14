@@ -23,8 +23,3 @@ spec:
           ports:
             - name: http
               containerPort: 3000
-
-          #lifecycle:
-            #preStop:
-              #exec:
-                #command: ["/usr/sbin/nginx","-s","quit"]

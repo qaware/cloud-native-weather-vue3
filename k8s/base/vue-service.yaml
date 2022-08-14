@@ -3,10 +3,11 @@ kind: Service
 metadata:
   name: vue-frontend
 spec:
+  type: ClusterIP
   selector:
     app: vue-frontend
   ports:
-    - protocol: "TCP"
+    - name: http
+      protocol: TCP
       port: 3000
       targetPort: http
-  type: LoadBalancer
