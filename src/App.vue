@@ -1,6 +1,6 @@
 <template>
   <img alt="Cloudy logo" src="./assets/cloudy.png" height="300">
-  <WeatherView title="Welcome to this Spring Boot Weather Application" msg=""/>
+  <WeatherView title="Welcome to the Cloud-native Weather UI" msg=""/>
 </template>
 
 <script>
