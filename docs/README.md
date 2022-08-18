@@ -110,6 +110,147 @@ http {
 
 ## K8s Deployment
 
+The application needs to be deployed, configured, run and exposed with Kubernetes. Several competing 
+approaches exist, namely Kustomize and Helm. For this section, you only need to choose and use one of them.
+
+### Option a) Kustomize
+
+In this step we are going to use [Kustomize](https://kustomize.io) to handle the Kubernetes manifests required
+to deploy, configure and expose the application to multiple Kubernetes environments.
+
+**Lab Instructions**
+1. Create directory structure for Kustomize `base/` and overlays for `dev/` and `prod/`
+2. Create base Kubernetes resources for the application and adjust Kustomization
+    - Create `Deployment` resource for application and add resource to `kustomization.yaml`
+    - Create `Service` resource for application and add resource to `kustomization.yaml`
+3. Adjust Kustomization in the `dev/` overlay to include base resources
+4. Create the following Kustomize patches for the application in the `prod/` overlay
+    - Patch the deployment and set `replicas: 2` with a dedicated file
+    - Patch the service and set `type: LoadBalancer` as Json6902 patch file
+
+<details>
+  <summary markdown="span">Click to expand solution ...</summary>
+
+The directory structure for the base and overlay Kustomization should follow the suggested [common layout](https://kubectl.docs.kubernetes.io/references/kustomize/glossary/#kustomization-root)
+
+```bash
+# create the suggested directory layout
+mkdir -p k8s/base
+mkdir -p k8s/overlays/dev
+mkdir -p k8s/overlays/prod
+
+# create initial kustomization.yaml
+cd k8s/base && kustomize create && cd ...
+cd k8s/overlays/dev && kustomize create && cd ....
+cd k8s/overlays/prod && kustomize create && cd ....
+```
+
+Next, we create the **base** Kubernetes resources for the application and register these with the Kustomization.
+```yaml
+# add this to a new base/vue-deployment.yaml file
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: vue-frontend
+spec:
+  selector:
+    matchLabels:
+      app: weather-frontend
+      tier: frontend
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: weather-frontend
+        tier: frontend
+    spec:
+      containers:
+        - name: cloud-native-weather-vue3
+          image: cloud-native-weather-vue3
+          imagePullPolicy: IfNotPresent
+          ports:
+            - name: http
+              containerPort: 3000
+
+# add this to a new base/vue-service.yaml file
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: vue-frontend
+spec:
+  type: ClusterIP
+  selector:
+    app: vue-frontend
+  ports:
+    - name: http
+      protocol: TCP
+      port: 3000
+      targetPort: http
+
+# add these to the base/kustomization.yaml
+---
+commonLabels:
+  app: weather-service
+  framework: golang
+
+buildMetadata: [managedByLabel]
+
+resources:
+  - vue-deployment.yaml
+  - vue-service.yaml
+```
+
+The **dev** overlay only need to reference the base resources inside the `overlays/dev/kustomization.yaml`.
+```yaml
+resources:
+  - ../../base/
+```
+
+For the **prod** overlay we need to patch the **base** Kubernetes resources to only modify certain fields, like 
+replica count of the `Deployment` or the `Service` type.
+
+```yaml
+# add the following YAML patch to the overlays/prod/2-replicas.yaml file
+# the resource is identified by apiVersion + kind + name, everything under spec will be patched
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: vue-frontend
+spec:
+  replicas: 2
+
+# add the following JSON 6902 patch to the overlays/prod/loadbalancer.yaml
+---
+- op: replace
+  path: /spec/type
+  value: LoadBalancer
+
+# register the patches in the overlays/prod/kustomization.yaml
+---
+patchesStrategicMerge:
+  - 2-replicas.yaml
+
+patchesJson6902:
+  - target:
+      version: v1
+      kind: Service
+      name: vue-frontend
+    path: loadbalancer.yaml
+```
+</details>
+
+### Option b) Helm Chart
+
+_TODO_
+
+<details>
+  <summary markdown="span">Click to expand solution ...</summary>
+</details>
+
+
 ## Continuous Development
 
 A good and efficient developer experience (DevEx) is of utmost importance for any cloud-native software
