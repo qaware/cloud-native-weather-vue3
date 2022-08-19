@@ -42,6 +42,7 @@ the SPA artifacts are build during the image build stage and then used and copie
     - Build the SPA artifacts using the correct `node` base image
     - Assemble the final runtime image using `nginx` as base image
     - Provide a Nginx configuration to serve the SPA and the REST API
+    - Create a `.dockerignore` file, exclude `node_modules` and `dist/`
 
 <details>
   <summary markdown="span">Click to expand solution ...</summary>
